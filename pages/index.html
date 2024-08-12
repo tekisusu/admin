@@ -26,15 +26,15 @@
   <!-- Style -->
   <link rel="stylesheet" href="./css/style.css" />
   <script>
-       const collection = "tekisusu_2024-08-12";
+    const collection = "tekisusu_2024-08-12";
   </script>
 </head>
 
 <body>
   <!-- Header-Menu -->
-   <header>
-     <h2>Administrador</h2>
-   </header>
+  <header>
+    <h2>Administrador</h2>
+  </header>
 
   <!-- Sticky Form -->
   <section class="title display-flex-center display-none">
@@ -91,8 +91,16 @@
     <div id="middleSection">
       <div class="display-flex-center">
         <h1>Librería de Personal</h1>
-        <ion-icon name="add-circle-outline" data-bs-toggle="modal" data-bs-target="#myModal" id="showModalButton" class="display-none"></ion-icon>
+        <ion-icon name="add-circle-outline" data-bs-toggle="modal" data-bs-target="#myModal" id="showModalButton"
+          class="display-none"></ion-icon>
       </div>
+
+      <!-- Search Function: Input + Button -->
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar" id="searchInput" />
+        <button class="btn bg-green" type="button" id="searchButton">Buscar</button>
+      </div>
+
     </div>
   </section>
 
