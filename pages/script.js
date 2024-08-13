@@ -1,6 +1,7 @@
 import { ref, onValue } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 import { database } from "../environment/firebaseConfig.js";
 import { deleteRow } from "../modules/tabla/deleteRow.js";
+import { addEditEventListeners } from "../modules/tabla/editRow.js";
 import { mostrarModal } from "../modules/mostrarModal.js";
 import { initializeSearch } from "../modules/searchFunction.js";
 import { initScrollButtons } from "../modules/scrollButtons.js";
@@ -145,6 +146,12 @@ export function mostrarDatos() {
               </select>
             </div>
           </td>
+
+          <td class="display-flex-center">
+            <button class="btn btn-primary edit-user-button" data-id="${user.id}"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-danger delete-user-button" data-id="${user.id}"><i class="bi bi-eraser-fill"></i></button>
+          </td>
+
         </tr>
       `;
       tabla.innerHTML += row;
@@ -152,6 +159,7 @@ export function mostrarDatos() {
 
     deleteRow(database, collection); // Añade event listeners para eliminación
     updatePagination(totalPages, mostrarDatos);
+    addEditEventListeners(database, collection); // Añade event listeners para edición
   });
 }
 
