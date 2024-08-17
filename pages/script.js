@@ -72,9 +72,6 @@ export function mostrarDatos() {
                         <i class="bi bi-eraser-fill"></i>
                     </button>
                 </td>
-                <td class="text-center">
-                    <span class="${!user.userId ? 'invisible-value' : ''}">${user.userId || ''}</span>
-                </td>
             `;
             tabla.appendChild(row);
 
